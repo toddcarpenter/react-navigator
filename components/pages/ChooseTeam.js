@@ -24,18 +24,28 @@ class ChooseTeam extends Component {
   }
   renderScene(route, navigator) {
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent:'center'}}>
-        <TouchableHighlight style={{backgroundColor: 'yellow', padding: 10}}
-            onPress={this.gotoPersonPage.bind(this)}>
-          <Text style={{backgrondColor: 'yellow', color: 'green'}}>Main Page</Text>
+      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent:'center'}}>
+        <TouchableHighlight style={{backgroundColor: 'black', padding: 10, margin: 10}}
+            onPress={this.gotoGhostLanding.bind(this)}>
+          <Text style={{backgrondColor: 'blue', color: 'white'}}>Ghost</Text>
+        </TouchableHighlight>
+        <TouchableHighlight style={{backgroundColor: 'red', padding: 10, margin: 10}}
+            onPress={this.gotoRunnerLanding.bind(this)}>
+          <Text style={{backgrondColor: 'blue', color: 'white'}}>Runner</Text>
         </TouchableHighlight>
       </View>
     );
   }
-  gotoPersonPage() {
+  gotoGhostLanding() {
     this.props.navigator.push({
-      id: 'PersonPage',
-      name: '我的主页',
+      id: 'GhostLanding',
+      name: 'Ghost',
+    });
+  }
+  gotoRunnerLanding() {
+    this.props.navigator.push({
+      id: 'RunnerLanding',
+      name: 'Runner',
     });
   }
 }

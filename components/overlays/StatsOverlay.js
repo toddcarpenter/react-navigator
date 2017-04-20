@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-class NoNavigatorPage extends Component {
+class StatsOverlay extends Component {
   render() {
     var navigator = this.props.navigator;
     return (
@@ -20,4 +20,4 @@ class NoNavigatorPage extends Component {
   }
 }
 
-module.exports = NoNavigatorPage;
+module.exports = StatsOverlay;

@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-class PersonPage extends Component {
+class GhostLanding extends Component {
   render() {
     return (
       <Navigator
@@ -24,14 +24,14 @@ class PersonPage extends Component {
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <TouchableOpacity
             onPress={this.gotoNext.bind(this)}>
-          <Text>Person Page</Text>
+          <Text>Ghost Landing</Text>
         </TouchableOpacity>
       </View>
     );
   }
   gotoNext() {
     this.props.navigator.push({
-      id: 'NoNavigatorPage',
+      id: 'StatsOverlay',
       sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
     });
   }
@@ -53,7 +53,7 @@ var NavigationBarRouteMapper = {
       <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}
           onPress={() => navigator.parentNavigator.push({id: 'unknown'})}>
         <Text style={{color: 'white', margin: 10,}}>
-          Right
+          
         </Text>
       </TouchableOpacity>
     );
@@ -62,11 +62,11 @@ var NavigationBarRouteMapper = {
     return (
       <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}>
         <Text style={{color: 'white', margin: 10, fontSize: 16}}>
-          Title
+          Ghost
         </Text>
       </TouchableOpacity>
     );
   }
 };
 
-module.exports = PersonPage;
+module.exports = GhostLanding;

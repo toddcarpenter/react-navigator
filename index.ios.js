@@ -8,11 +8,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-var SplashPage = require('./SplashPage');
-var GameOverview = require('./GameOverview');
-var ChooseTeam = require('./ChooseTeam');
-var PersonPage = require('./PersonPage');
-var NoNavigatorPage = require('./NoNavigatorPage');
+var SplashPage = require('./components/pages/SplashPage');
+var GameOverview = require('./components/pages/GameOverview');
+var ChooseTeam = require('./components/pages/ChooseTeam');
+var GhostLanding = require('./components/pages/GhostLanding');
+var RunnerLanding = require('./components/pages/RunnerLanding');
+var StatsOverlay = require('./components/overlays/StatsOverlay');
 
 class App extends Component {
   render() {
@@ -48,15 +49,21 @@ class App extends Component {
             navigator={navigator} />
       );
     }
-    if (routeId === 'PersonPage') {
+    if (routeId === 'GhostLanding') {
       return (
-        <PersonPage
+        <GhostLanding
           navigator={navigator} />
       );
     }
-    if (routeId === 'NoNavigatorPage') {
+    if (routeId === 'RunnerLanding') {
       return (
-        <NoNavigatorPage
+        <RunnerLanding
+          navigator={navigator} />
+      );
+    }
+    if (routeId === 'StatsOverlay') {
+      return (
+        <StatsOverlay
             navigator={navigator} />
       );
     }
